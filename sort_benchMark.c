@@ -42,7 +42,7 @@ int main(){
     /**
      * 
      */
-    fprintf(fp, "This file display the execution times of some algorithms.\nEvery single algorithms manipulate the same vector, in this way the comparison between the times are more accurate.\n\n");
+    fprintf(fp, "This file display the execution times of some sorting algorithms.\nEvery single algorithms manipulate the same vector of %d elements, in this way the comparison between the times are more accurate.\nVector is randomly generated evrey time the program is run\n\n", DIM);
     bouble_sort(v1, DIM, &t1);
     insertion_sort(v2, DIM, &t2);
     selection_sort(v3, DIM, &t3);
@@ -51,13 +51,13 @@ int main(){
     /**
      * 
      */
-    fprintf(fp, "%-20s |%20s", "Algorithms", "execution time\n");
+    fprintf(fp, "%-20s | %20s", "Algorithms", "execution time\n");
     fprintf(fp, "---------------------+--------------------\n");
-    fprintf(fp, "%-20s |%18.2f\n", "Bouble sort", t1);
-    fprintf(fp, "%-20s |%18.2f\n", "Insertion sort", t2);
-    fprintf(fp, "%-20s |%18.2f\n", "selection sort", t3);
-    fprintf(fp, "%-20s |%18.2f\n", "Merge sort rec", t4);
-    fprintf(fp, "%-20s |%18.2f\n", "Quick sort", t5);
+    fprintf(fp, "%-20s | %15.2f%4s\n", "Bouble sort", t1, "sec");
+    fprintf(fp, "%-20s | %15.2f%4s\n", "Insertion sort", t2, "sec");
+    fprintf(fp, "%-20s | %15.2f%4s\n", "selection sort", t3, "sec");
+    fprintf(fp, "%-20s | %15.2f%4s\n", "Merge sort rec", t4, "sec");
+    fprintf(fp, "%-20s | %15.2f%4s\n", "Quick sort", t5, "sec");
 
 
     
