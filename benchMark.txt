@@ -1,0 +1,7 @@
+Algorithms           |     execution time
+---------------------+--------------------
+Bouble sort          |              9.08
+Insertion sort       |             10.28
+selection sort       |              5.81
+Merge sort rec       |              0.02
+Quick sort           |              0.02
