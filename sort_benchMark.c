@@ -42,6 +42,7 @@ int main(){
     /**
      * 
      */
+    fprintf(fp, "This file display the execution times of some algorithms.\nEvery single algorithms manipulate the same vector, in this way the comparison between the times are more accurate.\n\n");
     bouble_sort(v1, DIM, &t1);
     insertion_sort(v2, DIM, &t2);
     selection_sort(v3, DIM, &t3);

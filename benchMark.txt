@@ -1,7 +1,10 @@
+This file display the execution times of some algorithms.
+Every single algorithms manipulate the same vector, in this way the comparison between the times are more accurate.
+
 Algorithms           |     execution time
 ---------------------+--------------------
-Bouble sort          |              9.08
-Insertion sort       |             10.28
-selection sort       |              5.81
+Bouble sort          |              9.24
+Insertion sort       |             10.36
+selection sort       |              5.82
 Merge sort rec       |              0.02
-Quick sort           |              0.02
+Quick sort           |              0.01
