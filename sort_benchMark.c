@@ -60,13 +60,13 @@ int main(){
     /**
      * stampa dei risultati sul file.csv
      */
-    fprintf(fp2, "%-20s;%20s;%20s\n", "Algorithms", "Execution time", "type");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "Bouble sort", t1, "sec", "iterative");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "Insertion sort", t2, "sec", "iterative");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "selection sort", t3, "sec", "iterative");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "Merge sort rec", t4, "sec", "recursive");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "Quick sort", t5, "sec", "recursive");
-    fprintf(fp2, "%-20s;%16.2f%4s;%20s\n", "Counting sort", t6, "sec", "iterative");
+    fprintf(fp2, "%-20s;%20s;%20s;\n", "Algorithms", "Execution time", "type");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "Bouble sort", t1, "sec", "iterative");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "Insertion sort", t2, "sec", "iterative");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "selection sort", t3, "sec", "iterative");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "Merge sort rec", t4, "sec", "recursive");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "Quick sort", t5, "sec", "recursive");
+    fprintf(fp2, "%-20s;%16.2f%4s;%20s;\n", "Counting sort", t6, "sec", "iterative");
     /**
      * libero la memoria
      */
