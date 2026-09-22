@@ -120,7 +120,6 @@ static void merge_sort_r(int *vett, int l, int r){
     //printf("left: %d mid: %d right: %d\n", l, m, r);
     mergeFunct(vett, l, m, r);
 }
-
 void merge_sort(int *vett, int n, float *time){
     int l=0;
     int r=n-1;
@@ -149,8 +148,6 @@ static void quick_sort_r(int *vett, int start, int finish){
     quick_sort_r(vett, start, i-1);
     quick_sort_r(vett, i+1, finish);
 }
-
-
 void quick_sort(int *vett, int n, float *time){
     clock_t t_start, t_finish;
 
@@ -161,4 +158,51 @@ void quick_sort(int *vett, int n, float *time){
     *time = (float) (t_finish-t_start) / CLOCKS_PER_SEC;
 }
 
+static int findMax(int *vett, int n){
+    int i, max;
+    max = vett[0];
 
+    for(i=1; i<n; i++){
+        if(vett[i]>max){
+            max = vett[i];
+        }
+    }
+    return max;
+}
+static void  copyArray(int *src, int *dest, int n){
+    int i;
+
+    for(i=0; i<n; i++){
+        dest[i]=src[i];
+    }
+}
+/*Counting sort*/
+void counting_sort(int *vett, int n, float *time){
+    clock_t start, finish;
+    int max, *cntArr, *cpvett, i;
+    
+    start = clock();
+
+    cpvett = malloc(n*sizeof(int));
+    copyArray(vett, cpvett, n);
+
+    max = findMax(vett, n);
+
+    cntArr = calloc(max+1, sizeof(int));
+    for(i=0; i<n; i++){
+        cntArr[cpvett[i]]++;
+    }
+    for(i=1; i<max+1; i++){
+        cntArr[i]+=cntArr[i-1];
+    }
+    for(i=n-1; i>=0; i--){
+        vett[cntArr[cpvett[i]]-1] = cpvett[i];
+        cntArr[cpvett[i]]--;
+    }
+
+    finish = clock();
+
+    *time = (float)(finish-start) / CLOCKS_PER_SEC;
+
+    free(cpvett);
+}

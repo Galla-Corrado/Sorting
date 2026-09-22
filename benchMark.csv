@@ -1,7 +1,7 @@
 Algorithms          ;      Execution time;                type
-Bouble sort         ;            9.01 sec;           iterative
-Insertion sort      ;           10.39 sec;           iterative
-selection sort      ;            8.06 sec;           iterative
+Bouble sort         ;            9.45 sec;           iterative
+Insertion sort      ;           10.30 sec;           iterative
+selection sort      ;            5.74 sec;           iterative
 Merge sort rec      ;            0.02 sec;           recursive
-Quick sort          ;            0.01 sec;           recursive
+Quick sort          ;            0.02 sec;           recursive
 Counting sort       ;            0.00 sec;           iterative
