@@ -8,8 +8,8 @@
 
 int main(){
 
-    int *v1, *v2, *v3, *v4, *v5, *v6;
-    float t1, t2, t3, t4, t5, t6;
+    int *v1, *v2, *v3, *v4, *v5, *v6, *v7;
+    float t;
     int i, x;
     FILE *fp1, *fp2;
 
@@ -27,10 +27,11 @@ int main(){
      */
     v1 = malloc(DIM*sizeof(int));
     v2 = malloc(DIM*sizeof(int));
-    v3 = malloc (DIM*sizeof(int));
-    v4 = malloc (DIM*sizeof(int));
+    v3 = malloc(DIM*sizeof(int));
+    v4 = malloc(DIM*sizeof(int));
     v5 = malloc(DIM*sizeof(int));
     v6 = malloc(DIM*sizeof(int));
+    v7 = malloc(DIM*sizeof(int));
     /**
      * riempio i vettori con numeri casuali tra 0 e DIM-1
      */
@@ -43,6 +44,7 @@ int main(){
         v4[i]=x;
         v5[i]=x;
         v6[i]=x;
+        v7[i]=x;
     }
     /**
      * creazione file.md
@@ -51,22 +53,30 @@ int main(){
     /**
      * esecuzione dei vari algoritmi
      */
-    bouble_sort(v1, DIM, &t1);
-    insertion_sort(v2, DIM, &t2);
-    selection_sort(v3, DIM, &t3);
-    merge_sort(v4, DIM, &t4);
-    quick_sort(v5, DIM, &t5);
-    counting_sort(v6, DIM, &t6);
-    /**
-     * stampa dei risultati sul file.csv
-     */
     fprintf(fp2, "%s,%s,%s\n", "Algorithms", "Execution time(sec)", "type");
-    fprintf(fp2, "%s,%.3f,%s\n", "Bouble sort", t1, "iterative");
-    fprintf(fp2, "%s,%.3f,%s\n", "Insertion sort", t2, "iterative");
-    fprintf(fp2, "%s,%.3f,%s\n", "selection sort", t3, "iterative");
-    fprintf(fp2, "%s,%.3f,%s\n", "Merge sort rec", t4, "recursive");
-    fprintf(fp2, "%s,%.3f,%s\n", "Quick sort", t5, "recursive");
-    fprintf(fp2, "%s,%.3f,%s\n", "Counting sort", t6, "iterative");
+
+    bouble_sort(v1, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Bouble sort", t, "iterative");
+
+    insertion_sort(v2, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Insertion sort", t, "iterative");
+
+    selection_sort(v3, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "selection sort", t, "iterative");
+
+    merge_sort(v4, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Merge sort rec", t, "recursive");
+
+    quick_sort(v5, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Quick sort", t, "recursive");
+
+    counting_sort(v6, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Counting sort", t, "iterative");
+
+    HeapSort(v7, DIM, &t);
+    fprintf(fp2, "%s,%.3f,%s\n", "Heap sort", t, "recursive");
+    
+    
     /**
      * libero la memoria
      */
@@ -76,6 +86,7 @@ int main(){
     free(v4);
     free(v5);
     free(v6);
+    free(v7);
     /**
      * chiusura file
      */

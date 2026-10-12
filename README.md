@@ -10,3 +10,4 @@ Results are in the *benchMark.csv* file.
 - Merge sort
 - Quick sort
 - Counting sort
+- Heap sort

@@ -206,3 +206,43 @@ void counting_sort(int *vett, int n, float *time){
 
     free(cpvett);
 }
+
+
+static void Heapify_r(int *vett, int pos, int n){
+    int l,r, tmp, largest;
+
+    largest = pos;
+    l=pos*2+1;
+    r=pos*2+2;
+    if(l<n && vett[l]>vett[largest]){
+        largest = l;
+    }
+    if(r<n && vett[r]>vett[largest]){
+        largest = r;
+    }
+    if(largest != pos){
+        tmp = vett[pos];
+        vett[pos] = vett[largest];
+        vett[largest] = tmp;
+        Heapify_r(vett, largest, n);
+    }
+}
+void HeapSort(int *vett, int n, float *time){
+    time_t t_start, t_finish;
+    int i, tmp;
+
+    t_start = clock();
+    for(i=n/2-1; i>=0; i--){
+        Heapify_r(vett, i, n);
+    }
+    for(i=n-1; i>0; i--){
+        tmp = vett[0];
+        vett[0] = vett[i];
+        vett[i] = tmp;
+        Heapify_r(vett, 0, i);
+    }
+    t_finish = clock();
+
+    *time = (float)(t_finish-t_start)/CLOCKS_PER_SEC;
+
+}
